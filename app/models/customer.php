@@ -24,6 +24,17 @@ class Customer
     function getRentals(){
         return $this->rentals;
     }
+
+    function statement(){
+        $totalAmount = 0;
+        $frequesntRenterPoints = 0;
+        $result = "Rental Record for " . $this->getName() . "\n";
+        foreach ($this->rentals as $index => $each) {
+            $thisAmount = 0;
+        }
+
+        return $result;
+    }
 }
 
  ?>

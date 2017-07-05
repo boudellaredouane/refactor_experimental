@@ -31,6 +31,17 @@ class CustomerTest extends PHPUnit_Framework_TestCase
         $this->assertCount(2, $customer->getRentals());
     }
 
+    /**
+     * @test
+     */
+    function can_append_statement_correctly(){
+        $rental_1 = $this->generateRental();
+        $customer = new Models\Customer("Redouane");
+        $customer->addRental($rental_1);
+
+        $this->assertTrue(strlen($customer->statement()) > 0);
+    }
+
     private function generateRental(){
         $movie = new Models\Movie("Cool Movie", Models\Movie::NEW_RELEASE);
         $rental = new Models\Rental($movie, 5);
